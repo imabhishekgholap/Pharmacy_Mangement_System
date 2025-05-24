@@ -1,0 +1,820 @@
+{
+	"info": {
+		"_postman_id": "0af8c377-0dba-48dc-ae16-2b134450bee6",
+		"name": "CaseStudy-Microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41615331"
+	},
+	"item": [
+		{
+			"name": "Drug-Service",
+			"item": [
+				{
+					"name": "add-New-Drug",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiRE9DVE9SIiwic3ViIjoiUmFodWwiLCJpc3MiOiJJbm5vdmF0aW9uIiwiaWF0IjoxNzQ0MjMwMDAyLCJleHAiOjE3NDQyMzA2MDJ9.vz9dpv1B3O1kDkQWHHfPQ6PVvZxXq0_qfkk4C_il9Wf-KZAxIwszsquNmc8Uau9_",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"batchId\": \"d1893\",\r\n        \"name\": \"Azithromycin\",\r\n        \"quantity\": 100,\r\n        \"expiryDate\": \"2024-12-31\",\r\n        \"price\": 2.5,\r\n        \"supplierEmail\": \"supplierexample@gmail.com\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/api/drugs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"drugs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-All-Drugs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJQcmVzdGlnZSIsImlzcyI6Iklubm92YXRpb24iLCJpYXQiOjE3NDQyMjE4NDEsImV4cCI6MTc0NDIyMjQ0MX0.xRQlU6dXgvpTfYo6Pe0mhcgNzY9Q0RTv31D968up0ZrZ3Z7EIudxI7TJz3Ucfrzr",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/drugs/view",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"drugs",
+								"view"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-Drug-By-Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJBbmlrZXQiLCJpc3MiOiJJbm5vdmF0aW9uIiwiaWF0IjoxNzQ0MjI3NDE4LCJleHAiOjE3NDQyMjgwMTh9.ge0Dsn_1yMVPInEk1L4lhf_6qb6sTrARikZm5ABoEJHGgNNR-VPXPQPInCH1osjv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8765/api/drugs/batch/BATCH-001",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"drugs",
+								"batch",
+								"BATCH-001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-Drug-By-Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJBbmlrZXQiLCJpc3MiOiJJbm5vdmF0aW9uIiwiaWF0IjoxNzQ0MjI3NDE4LCJleHAiOjE3NDQyMjgwMTh9.ge0Dsn_1yMVPInEk1L4lhf_6qb6sTrARikZm5ABoEJHGgNNR-VPXPQPInCH1osjv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"batchId\": \"1\",\r\n        \"name\": \"Paracetamol new Drug\",\r\n        \"quantity\": 150,\r\n        \"expiryDate\": \"2025-12-31\",\r\n        \"price\": 2.5,\r\n        \"supplierEmail\": \"mhatre@gmail.com\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/api/drugs/batch/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"drugs",
+								"batch",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-Drug-By-Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJQcmVzdGlnZSIsImlzcyI6Iklubm92YXRpb24iLCJpYXQiOjE3NDQyMjE4NDEsImV4cCI6MTc0NDIyMjQ0MX0.xRQlU6dXgvpTfYo6Pe0mhcgNzY9Q0RTv31D968up0ZrZ3Z7EIudxI7TJz3Ucfrzr",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/drugs/batch/d123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"drugs",
+								"batch",
+								"d123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-Drug-By-Supplier",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/drugs/supplier/supplier@example.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"drugs",
+								"supplier",
+								"supplier@example.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search-Drugs-By-Name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/drug-service/api/drugs/search?name=Paracetamol",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"drug-service",
+								"api",
+								"drugs",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Paracetamol"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-Expired-Drugs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJQcmVzdGlnZSIsImlzcyI6Iklubm92YXRpb24iLCJpYXQiOjE3NDQyMjE4NDEsImV4cCI6MTc0NDIyMjQ0MX0.xRQlU6dXgvpTfYo6Pe0mhcgNzY9Q0RTv31D968up0ZrZ3Z7EIudxI7TJz3Ucfrzr",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/drugs/expired?expiryDate=2025-04-05",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"drugs",
+								"expired"
+							],
+							"query": [
+								{
+									"key": "expiryDate",
+									"value": "2025-04-05"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order-Service",
+			"item": [
+				{
+					"name": "Order-place",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJBbmlrZXQiLCJpc3MiOiJJbm5vdmF0aW9uIiwiaWF0IjoxNzQ0MjI3NDE4LCJleHAiOjE3NDQyMjgwMTh9.ge0Dsn_1yMVPInEk1L4lhf_6qb6sTrARikZm5ABoEJHGgNNR-VPXPQPInCH1osjv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"doctorId\": \"DOC123\",\r\n    \"doctorName\": \"Dr.vishal Patil\",\r\n    \"doctorContact\": \"555-1234\",\r\n    \"doctorEmail\": \"dr.jane@clinic.com\",\r\n    \"batchId\": \"BATCH-001\",\r\n    \"drugName\": \"Paracetamol\",\r\n    \"quantity\": 5,\r\n    \"orderDate\": \"2025-04-06T23:34:07.9810826\",\r\n    \"pickupDate\": null,\r\n    \"status\": \"PENDING\",\r\n    \"paidAmount\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify-OrderId-And-RecordSale",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJBbmlrZXQiLCJpc3MiOiJJbm5vdmF0aW9uIiwiaWF0IjoxNzQ0MjI3NDE4LCJleHAiOjE3NDQyMjgwMTh9.ge0Dsn_1yMVPInEk1L4lhf_6qb6sTrARikZm5ABoEJHGgNNR-VPXPQPInCH1osjv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/9e1743e1-55bd-482a-8296-ea7518e8ec48/verify",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"9e1743e1-55bd-482a-8296-ea7518e8ec48",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pickUp-order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJBbmlrZXQiLCJpc3MiOiJJbm5vdmF0aW9uIiwiaWF0IjoxNzQ0MjI3NDE4LCJleHAiOjE3NDQyMjgwMTh9.ge0Dsn_1yMVPInEk1L4lhf_6qb6sTrARikZm5ABoEJHGgNNR-VPXPQPInCH1osjv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/orders/5d5e1162-2770-4e0c-b7f3-0c007f0804ae/pickup?pickupDate=2025-04-12T10:30:00",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"orders",
+								"5d5e1162-2770-4e0c-b7f3-0c007f0804ae",
+								"pickup"
+							],
+							"query": [
+								{
+									"key": "pickupDate",
+									"value": "2025-04-12T10:30:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orders-By-DoctorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/orders/doctor/DOC056",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"orders",
+								"doctor",
+								"DOC056"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-Order-By-Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJBbmlrZXQiLCJpc3MiOiJJbm5vdmF0aW9uIiwiaWF0IjoxNzQ0MjI3NDE4LCJleHAiOjE3NDQyMjgwMTh9.ge0Dsn_1yMVPInEk1L4lhf_6qb6sTrARikZm5ABoEJHGgNNR-VPXPQPInCH1osjv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/orders/status/VERIFIED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"orders",
+								"status",
+								"VERIFIED"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sales-Service",
+			"item": [
+				{
+					"name": "get-All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/sales-service/sales/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"sales-service",
+								"sales",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-Pdf",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/sales/report/download",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"sales",
+								"report",
+								"download"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-Record",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/sales/record",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"sales",
+								"record"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/sales/history?startDate=2025-04-07",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"sales",
+								"history"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2025-04-07"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Supplier-Inventory-Service",
+			"item": [
+				{
+					"name": "get-All-Suppliers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/supplierinventory/suppliers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"supplierinventory",
+								"suppliers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-supplier",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/supplierinventory/supplier",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"supplierinventory",
+								"supplier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-Supplier-inventories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/supplierinventory/supplier/67f42068c89d2f684afd3d23/inventories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"supplierinventory",
+								"supplier",
+								"67f42068c89d2f684afd3d23",
+								"inventories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-inventory-By-Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/supplierinventory/inventory/67f4231ec89d2f684afd3d25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"supplierinventory",
+								"inventory",
+								"67f4231ec89d2f684afd3d25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-Supplier",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/supplierinventory/suppliers/67f42068c89d2f684afd3d23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"supplierinventory",
+								"suppliers",
+								"67f42068c89d2f684afd3d23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-drug-quantity",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/supplierinventory/suppliers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"supplierinventory",
+								"suppliers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "restock-Drug",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/supplierinventory/restock/BATCH-001/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"supplierinventory",
+								"restock",
+								"BATCH-001",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-inventory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/api/supplierinventory/inventory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"api",
+								"supplierinventory",
+								"inventory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User-Management-Service",
+			"item": [
+				{
+					"name": "get-Token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":127,\r\n    \"userName\":\"devanshagrawal\",\r\n    \"password\":\"devanshagrawal@279\",\r\n    \"role\":\"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8882/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8882",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register-User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8882/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8882",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8882/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8882",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
